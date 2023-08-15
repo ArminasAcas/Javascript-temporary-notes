@@ -1,0 +1,33 @@
+.note-categories {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: solid 3px #171016;
+    border-radius: 25%;
+    padding: 0 25px 25px 25px;
+    font-size: xx-large;
+}
+
+.note-categories__button {
+    border-radius: 30%;
+    font-size: large;
+    padding: 15px;
+}
+
+.note-categories__button--grey {
+    background-color: #cfcfcf;
+}
+
+.note-categories__button--green {
+    background-color: #91e334;
+}
+
+.note-categories__button--orange {
+    background-color: #e36634;
+}
+
+.note-categories__button--yellow {
+    background-color: #e3e034;
+}
