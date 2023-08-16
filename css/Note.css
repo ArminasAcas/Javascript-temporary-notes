@@ -1,0 +1,17 @@
+.note {
+    background-color: #2d1e2c;
+    width: 50%;
+    height: 500px;
+    border-radius: 10%;
+}
+
+.note__content {
+    border-radius: 10%;
+    max-height: 500px;
+    padding: 30px;
+}
+
+.note__text {
+    max-height: 400px;
+    overflow: auto;
+}

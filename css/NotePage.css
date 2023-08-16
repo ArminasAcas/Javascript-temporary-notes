@@ -4,4 +4,5 @@
     color: white;
     margin: 25px;
     font-family: "Lucida Console";
+    word-break: break-word;
 }
