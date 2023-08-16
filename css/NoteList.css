@@ -1,9 +1,19 @@
 .note-list {
+    border-left: solid 2px #171016;
+    border-right: solid 2px #171016;
+    border-radius: 10%;
+    padding: 20px;
+    width: 40%;
+}
+
+.note-list__notes {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    width: 40%;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 20px 20px;
+    max-height: 400px;
+    overflow: auto;
+    border-radius: 10%;
 }
 
 .note-list__text {

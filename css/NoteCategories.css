@@ -20,14 +20,30 @@
     background-color: #cfcfcf;
 }
 
+.note-categories__button--grey:active {
+    background-color: #999999;
+}
+
 .note-categories__button--green {
     background-color: #91e334;
+}
+
+.note-categories__button--green:active {
+    background-color: #76bd25;
 }
 
 .note-categories__button--orange {
     background-color: #e36634;
 }
 
+.note-categories__button--orange:active {
+    background-color: #c2552b;
+}
+
 .note-categories__button--yellow {
     background-color: #e3e034;
+}
+
+.note-categories__button--yellow:active {
+    background-color: #c0bd1f;
 }
