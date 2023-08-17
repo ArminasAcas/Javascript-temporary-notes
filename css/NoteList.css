@@ -9,11 +9,18 @@
 .note-list__notes {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
     padding: 0 20px 20px 20px;
     max-height: 400px;
     overflow: auto;
     border-radius: 10%;
+}
+
+.note-list__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .note-list__text {
@@ -24,14 +31,26 @@
 .note-list__note {
     font-size: large;
     font-weight: 500;
-    padding: 5px 0 5px 0;
+    padding: 20px 10px 20px 10px;
+    border-radius: 10%;
 }
 
-.note-list__note-button {
+.note-list__note:hover {
+    background-color: #60465f;
+}
+
+.note-list__button {
     font-size: large;
     font-weight: bold;
     padding: 5px 10px 5px 10px;
     border-radius: 20%;
-    color: red;
     background-color: #3d2b3c;;
+}
+
+.note-list__button--red {
+    color: red;
+}
+
+.note-list__button--green {
+    color: rgb(17, 198, 17);
 }
