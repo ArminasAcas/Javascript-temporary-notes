@@ -10,19 +10,19 @@ let notes = [
     {
         category: categories.general,
         name: "Shopping list",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        text: "Must get - \n 1. Milk \n 2. Juice \n 3. Drinks \n 4. Chocolate",
         id: 0
     },
     {
         category: categories.general,
         name: "Movies to watch",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        text: " 1. Whispering Echoes (watched) \n 2. Midnight Mirage \n 3. Frozen Engine \n 4. Eternal Life \n 5. Mystic Reverse",
         id: 1
     },
     {
         category: categories.general,
-        name: "Ideas",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        name: "Interesting songs",
+        text: " Dancing in Puddles of Moonlight by Luna Starstrider \n Banana Peel Boogie by Groovy Peelman \n Unicorn Dreams and Disco Beams by Sparkle Funkwalker \n Bubblegum Sunshine Serenade by Candy Melodica",
         id: 2
     },
 ]
