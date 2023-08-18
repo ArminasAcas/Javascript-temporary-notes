@@ -9,7 +9,9 @@ function displayNoteList(category) {
 
     let notes = document.querySelectorAll(".note-list__note");
     if (!notes) return;
-    notes.forEach(note => addNoteDataDisplay(note));
+    notes.forEach(note => {
+        addNoteDataDisplay(note);
+    })
 }
 
 function filterNotes(category) {
@@ -50,10 +52,22 @@ function addNoteDataDisplay(note) {
 
         if(!id || !noteNameInput || !noteTextArea) return;
 
-        console.log("veik");
-        noteNameInput.value = notes[id].name;
-        noteTextArea.value = notes[id].text;
+        index = getNoteIndexById(id);
+
+        noteNameInput.value = notes[index].name;
+        noteTextArea.value = notes[index].text;
         noteNameInput.setAttribute("data-noteID", id);
         noteTextArea.setAttribute("data-noteID", id);
     })
+}
+
+function getNoteIndexById(id) {
+    let indexNum = 0;
+        notes.forEach((nt,index) => {
+            if (parseInt(id) === nt.id)
+            {
+                indexNum = index; 
+            }
+        })
+    return indexNum;
 }

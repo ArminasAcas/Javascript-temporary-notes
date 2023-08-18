@@ -5,8 +5,11 @@ function setUpNoteUpdate () {
 
     noteNameInput.addEventListener("input", () => {
         let id = noteNameInput.getAttribute("data-noteID");
-        if (!id || !notes[id]) return;
-        notes[id].name = noteNameInput.value;
+        if (!id) return;
+        index = getNoteIndexById(id);
+        if (!notes[index]) return;
+
+        notes[index].name = noteNameInput.value;
 
         let noteInList = document.querySelector(`[data-noteID= "${id}"]`);
         if (!noteInList) return;
@@ -15,7 +18,10 @@ function setUpNoteUpdate () {
 
     noteTextArea.addEventListener("input", () => {
         let id = noteTextArea.getAttribute("data-noteID");
-        if (!id || !notes[id]) return;
-        notes[id].text = noteTextArea.value;
+        if (!id) return;
+        index = getNoteIndexById(id);
+        if (!notes[index]) return;
+
+        notes[index].text = noteTextArea.value;
     })
 }
