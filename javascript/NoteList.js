@@ -11,6 +11,7 @@ function displayNoteList(category) {
     if (!notes) return;
     notes.forEach(note => {
         addNoteDataDisplay(note);
+        addNoteDelete(note,noteListSection);
     })
 }
 
@@ -70,4 +71,19 @@ function getNoteIndexById(id) {
             }
         })
     return indexNum;
+}
+
+function addNoteDelete(note,noteListSection) {
+    if (!note.children[1] || !note) return;
+    let deleteButton = note.children[1];
+
+    console.log("TT");
+    deleteButton.addEventListener("click", () => {
+        let id = note.getAttribute("data-noteID");
+        if (!id) return;
+
+        index = getNoteIndexById(id);
+        notes.splice(index, 1);
+        note.remove();
+    })
 }
