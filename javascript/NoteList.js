@@ -1,7 +1,15 @@
+function setupNoteList() {
+    let addNewNoteButton = document.querySelector(".note-list__button--green");
+    if (!addNewNoteButton) return;
+    addNewNoteButton.addEventListener("click", () => addNewNote());
+}
+
 function displayNoteList(category) {
 
     let noteListSection = document.querySelector(".note-list__notes");
     if (!noteListSection) return;
+    noteListSection.innerHTML = "";
+    
 
     let filteredNotes = filterNotes(category);
     if (!filterNotes) return;
@@ -92,4 +100,35 @@ function addNoteDelete(note,noteListSection) {
         if(!divider) return;
         divider.remove();
     })
+}
+
+function addNewNote(){
+
+    let selectedCategory = prompt("Input category name (Default - General)");
+    if(!selectedCategory) selectedCategory = categories.general;
+    if(!Object.values(categories).includes(selectedCategory)) 
+    {
+        alert("Please input an existing category");
+        return;
+    }
+
+    let note = {
+        category: selectedCategory,
+        name: "New note",
+        text: "",
+        id: getLargestId() + 1
+    }
+
+    notes.push(note);
+    displayNoteList(selectedCategory);
+}
+
+function getLargestId() {
+    let largestId = notes[0].id;
+
+    notes.forEach(note => {
+        if (largestId < note.id) largestId = note.id;
+    })
+
+    return largestId;
 }
