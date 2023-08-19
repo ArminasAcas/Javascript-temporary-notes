@@ -39,6 +39,7 @@ function createNote(note,noteListSection) {
     button.classList.add("note-list__button--red");
 
     let divider = document.createElement("div");
+    divider.setAttribute("data-noteID",note.id);
     divider.classList.add("divider");
 
     div.append(span,button);
@@ -52,8 +53,9 @@ function addNoteDataDisplay(note) {
         let noteTextArea = document.querySelector(".note__text");
 
         if(!id || !noteNameInput || !noteTextArea) return;
-
+        
         index = getNoteIndexById(id);
+        if (!notes[index]) return
 
         noteNameInput.value = notes[index].name;
         noteTextArea.value = notes[index].text;
@@ -85,5 +87,9 @@ function addNoteDelete(note,noteListSection) {
         index = getNoteIndexById(id);
         notes.splice(index, 1);
         note.remove();
+
+        let divider = document.querySelector(`[data-noteID= "${id}"]`);
+        if(!divider) return;
+        divider.remove();
     })
 }
