@@ -10,7 +10,6 @@ function displayNoteList(category) {
     if (!noteListSection) return;
     noteListSection.innerHTML = "";
     
-
     let filteredNotes = filterNotes(category);
     if (!filterNotes) return;
     filteredNotes.forEach(note => createNote(note,noteListSection));
@@ -21,6 +20,11 @@ function displayNoteList(category) {
         addNoteDataDisplay(note);
         addNoteDelete(note,noteListSection);
     })
+
+    let noteListText = document.querySelector(".note-list__text");
+    if (!noteListText) return;
+    noteListText.innerHTML = category + " Notes";
+    noteListText.setAttribute("data-category", category);
 }
 
 function filterNotes(category) {
@@ -87,7 +91,6 @@ function addNoteDelete(note,noteListSection) {
     if (!note.children[1] || !note) return;
     let deleteButton = note.children[1];
 
-    console.log("TT");
     deleteButton.addEventListener("click", () => {
         let id = note.getAttribute("data-noteID");
         if (!id) return;
@@ -104,23 +107,20 @@ function addNoteDelete(note,noteListSection) {
 
 function addNewNote(){
 
-    let selectedCategory = prompt("Input category name (Default - General)");
-    if(!selectedCategory) selectedCategory = categories.general;
-    if(!Object.values(categories).includes(selectedCategory)) 
-    {
-        alert("Please input an existing category");
-        return;
-    }
+    let noteListText = document.querySelector(".note-list__text");
+    if (!noteListText) return;
+
+    let currentCategory = noteListText.getAttribute("data-category");
 
     let note = {
-        category: selectedCategory,
+        category: currentCategory,
         name: "New note",
         text: "",
         id: getLargestId() + 1
     }
 
     notes.push(note);
-    displayNoteList(selectedCategory);
+    displayNoteList(currentCategory);
 }
 
 function getLargestId() {

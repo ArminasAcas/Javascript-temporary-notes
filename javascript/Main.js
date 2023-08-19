@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    setupCategories();
     setupNoteList();
-    displayNoteList("General");
+    displayNoteList(categories.general);
     setUpNoteUpdate();
 })
